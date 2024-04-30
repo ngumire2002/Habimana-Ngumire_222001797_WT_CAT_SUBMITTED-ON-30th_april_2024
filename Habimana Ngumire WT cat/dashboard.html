@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Wastage Management System - Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .dashboard-section {
+      margin-bottom: 30px;
+    }
+
+    .section-header {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .summary-item {
+      display: inline-block;
+      width: 200px;
+      margin-right: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="dashboard-section">
+      <h2 class="section-header">Food Inventory Summary</h2>
+      <div class="summary-item">
+        <h3>Total Items</h3>
+        <p id="totalItems">-</p>
+      </div>
+      <div class="summary-item">
+        <h3>Expiring Soon</h3>
+        <p id="expiringSoon">-</p>
+      </div>
+      <div class="summary-item">
+        <h3>Expired</h3>
+        <p id="expired">-</p>
+      </div>
+    </div>
+
+    <div class="dashboard-section">
+      <h2 class="section-header">Waste Events Summary</h2>
+      <div class="summary-item">
+        <h3>Total Events</h3>
+        <p id="totalEvents">-</p>
+      </div>
+      <div class="summary-item">
+        <h3>Last Event</h3>
+        <p id="lastEvent">-</p>
+      </div>
+    </div>
+
+    <div class="dashboard-section">
+      <h2 class="section-header">Prevention Measures Summary</h2>
+      <div class="summary-item">
+        <h3>Total Measures</h3>
+        <p id="totalMeasures">-</p>
+      </div>
+      <div class="summary-item">
+        <h3>Implemented</h3>
+        <p id="implemented">-</p>
+      </div>
+    </div>
+
+    <div class="dashboard-section">
+      <h2 class="section-header">Reports Summary</h2>
+      <div class="summary-item">
+        <h3>Total Reports</h3>
+        <p id="totalReports">-</p>
+      </div>
+      <div class="summary-item">
+        <h3>Most Viewed</h3>
+        <p id="mostViewed">-</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simulated data for demonstration
+    const data = {
+      totalItems: 100,
+      expiringSoon: 20,
+      expired: 5,
+      totalEvents: 10,
+      lastEvent: 'Event A',
+      totalMeasures: 5,
+      implemented: 3,
+      totalReports: 8,
+      mostViewed: 'Report X'
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('totalItems').textContent = data.totalItems;
+      document.getElementById('expiringSoon').textContent = data.expiringSoon;
+      document.getElementById('expired').textContent = data.expired;
+      document.getElementById('totalEvents').textContent = data.totalEvents;
+      document.getElementById('lastEvent').textContent = data.lastEvent;
+      document.getElementById('totalMeasures').textContent = data.totalMeasures;
+      document.getElementById('implemented').textContent = data.implemented;
+      document.getElementById('totalReports').textContent = data.totalReports;
+      document.getElementById('mostViewed').textContent = data.mostViewed;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Inventory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    button {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Food Inventory</h1>
+    <form id="addItemForm">
+      <input type="text" id="itemName" placeholder="Item Name" required>
+      <input type="number" id="itemQuantity" placeholder="Quantity" required>
+      <button type="submit">Add Item</button>
+    </form>
+    <ul id="inventoryList"></ul>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const addItemForm = document.getElementById('addItemForm');
+      const itemNameInput = document.getElementById('itemName');
+      const itemQuantityInput = document.getElementById('itemQuantity');
+      const inventoryList = document.getElementById('inventoryList');
+
+      addItemForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const itemName = itemNameInput.value;
+        const itemQuantity = parseInt(itemQuantityInput.value);
+
+        if (itemName && !isNaN(itemQuantity) && itemQuantity > 0) {
+          addItemToInventory(itemName, itemQuantity);
+          itemNameInput.value = '';
+          itemQuantityInput.value = '';
+        } else {
+          alert('Please enter valid item name and quantity.');
+        }
+      });
+
+      function addItemToInventory(name, quantity) {
+        const li = document.createElement('li');
+        li.textContent = `${name}: ${quantity}`;
+        inventoryList.appendChild(li);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Food Wastage Reduction Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      background-color: #333333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #8a1717;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Dashboard styles */
+    .dashboard-section {
+      margin-bottom: 30px;
+    }
+
+    .section-header {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .summary-item {
+      display: inline-block;
+      width: 200px;
+      margin-right: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Login to Food Wastage Reduction Management System</h1>
+  </div>
+
+  <div class="container">
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to set authentication status in local storage
+    function setAuthStatus(status) {
+      localStorage.setItem('authStatus', status);
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+      
+      // Get form values
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Perform authentication (replace with your actual authentication logic)
+      if (username === 'admin' && password === 'password') {
+        setAuthStatus('authenticated'); // Set authentication status
+        alert('Login successful! Redirecting to dashboard...');
+        window.location.href = 'dashboard.html'; // Redirect to dashboard
+      } else {
+        alert('Invalid username or password!');
+      }
+    });
+  </script>
+</body>
+</html>

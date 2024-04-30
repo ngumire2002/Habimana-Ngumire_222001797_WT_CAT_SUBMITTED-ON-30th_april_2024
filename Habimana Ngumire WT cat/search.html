@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Wastage Reduction Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .menu li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .menu li:last-child {
+      margin-right: 0;
+    }
+
+    .menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+    }
+
+    .menu li a:hover {
+      background-color: #45a049;
+    }
+
+    .content {
+      margin-top: 20px;
+    }
+
+    .search-form {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-form input[type="text"] {
+      width: 300px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .search-form button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Food Wastage Reduction Management System</h1>
+    <ul class="menu">
+      <li><a href="#">Get Started</a></li>
+      <li><a href="#">Log In</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <h2>Welcome to our Food Wastage Reduction Management System</h2>
+      <p>This system aims to reduce food wastage by efficiently managing food inventory, tracking waste events, implementing prevention measures, and generating insightful reports.</p>
+      <div class="search-form">
+        <input type="text" id="searchInput" placeholder="Enter keyword...">
+        <button onclick="search()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy;Food Wastage Reduction Management System. All rights reserved.</p>
+  </div>
+
+  <script>
+    function search() {
+      var keyword = document.getElementById("searchInput").value;
+      alert("Searching for: " + keyword);
+      // You can implement the search functionality here
+    }
+  </script>
+</body>
+</html>

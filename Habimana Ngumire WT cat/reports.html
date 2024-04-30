@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports Generation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Generate Reports</h2>
+
+    <label for="reportType">Select Report Type:</label>
+    <select id="reportType">
+      <option value="foodInventory">Food Inventory</option>
+      <option value="wasteEvents">Waste Events</option>
+      <option value="preventionMeasures">Waste Prevention Measures</option>
+    </select>
+
+    <button onclick="generateReport()">Generate Report</button>
+
+    <div id="reportOutput"></div>
+  </div>
+
+  <script>
+    function generateReport() {
+      const reportType = document.getElementById('reportType').value;
+      let reportData = '';
+
+      // Sample report data for demonstration
+      if (reportType === 'foodInventory') {
+        reportData = '<h3>Food Inventory Report</h3><p>Total items: 50</p><p>Total quantity: 100 kg</p>';
+      } else if (reportType === 'wasteEvents') {
+        reportData = '<h3>Waste Events Report</h3><p>Total waste events: 10</p><p>Average waste per event: 5 kg</p>';
+      } else if (reportType === 'preventionMeasures') {
+        reportData = '<h3>Waste Prevention Measures Report</h3><p>Total measures implemented: 3</p><p>Most effective measure: Better Inventory Management</p>';
+      }
+
+      document.getElementById('reportOutput').innerHTML = reportData;
+    }
+  </script>
+</body>
+</html>
